@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All_human</title>
+</head>
+<body>
+
+<div th:each="user : ${user}">
+    <a th:href="@{/user/{id} (id=${user.getId()})}" th:text="${user.getUsername()}">user</a>
+</div>
+
+<br>
+<hr/>
+
+<a th:href="@{/user/new}">Create User</a>
+
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="logout">
+</form>
+
+
+</body>
+</html>
