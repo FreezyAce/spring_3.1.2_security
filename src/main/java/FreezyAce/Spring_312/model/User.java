@@ -31,13 +31,13 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, int age, String lastName, String email, String password) {
+    public User(String username, int age, String lastName, String email, String password, Set<Role> role) {
         this.username = username;
         this.lastName = lastName;
         this.age = age;
         this.email = email;
         this.password = password;
-//        this.role = role;
+        this.role = role;
     }
 
     @Override
@@ -127,11 +127,12 @@ public class User implements UserDetails {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + username + '\'' +
+                ", username='" + username + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", role=" + role +
                 '}';
     }
 }
