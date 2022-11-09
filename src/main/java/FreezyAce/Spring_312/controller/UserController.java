@@ -20,7 +20,7 @@ public class UserController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = (User) auth.getPrincipal();
         model.addAttribute("user", user);
-        return "users/userID";
+        return "user";
     }
 
 }

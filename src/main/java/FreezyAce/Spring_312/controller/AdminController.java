@@ -25,7 +25,6 @@ public class AdminController {
         this.userService = userService;
     }
 
-
     @GetMapping()
     public String index(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -56,30 +55,5 @@ public class AdminController {
         userService.update(id, user);
         return "redirect:/admin";
     }
-
-//    @GetMapping("/{id}/edit")
-//    public String edit(Model model, @PathVariable("id") long id) {
-//        model.addAttribute("user", userService.userById(id));
-//        model.addAttribute("role", roleService.getAllRole());
-//        return "users/edit";
-//
-//    }
-
-    //    @GetMapping("/new")
-//    public String newUser(Model model) {
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        User user = (User) auth.getPrincipal();
-//        model.addAttribute("user", new User());
-//        model.addAttribute("role", roleService.getAllRole());
-//        model.addAttribute("userCurrent", user);
-//        return "users/createUser";
-//    }
-
-//    @GetMapping("/{id}")
-//    public String idUser(@PathVariable("id") long id, Model model) {
-//        model.addAttribute("user", userService.userById(id));
-//        return "users/userID";
-//    }
-
 
 }
