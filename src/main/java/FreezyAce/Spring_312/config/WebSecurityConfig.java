@@ -41,11 +41,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/index").permitAll()
                 .anyRequest().authenticated()
                 .and()
+                .csrf().disable()
                 .formLogin().loginPage("/login/login").loginProcessingUrl("/process_login").successHandler(successUserHandler)
                 .permitAll()
                 .and()
                 .logout()
                 .permitAll();
     }
+
 
 }
